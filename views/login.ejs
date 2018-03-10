@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        Login In :
+      </h2>
+      <%if (errors) { %>
+        <ul class="errors">
+            <li class="alert alert-danger"> <%=errors%></li><br>
+        </ul>
+      <%}%>
+      <% if ( messages ) { %>
+        <%for (var msg in messages){%>
+          <div class="flash"><%= messages[msg] %></div>
+        <%}%>
+      <% } %>
+      <form class="" action="/wlogin" method="POST">
+        <div class="form-group">
+          <div id="form-goup">
+            <label>Email:</label>
+            <input class="form-control" type="email" name="email">
+          </div>
+          <div id="form-goup">
+            <label>Password:</label>
+            <input class="form-control" type="password" name="password">
+          </div>
+          <br>
+          <input class="btn btn-primary" type="submit" name="sumbit" value="submit">
+        </div>
+      </form>
+      <a href="/wregister">Sign up?</a>
+    </div>
+  </body>
+</html>

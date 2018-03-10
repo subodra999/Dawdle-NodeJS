@@ -2,17 +2,20 @@ const mongoose = require('mongoose');
 
 // Riddle schema
 var riddleSchema = mongoose.Schema({
-  title:{
-    type: String,
-    required: true
-  },
-  body: {
+    body: {
     type: String,
     required: true
   },
   answer: {
     type: String,
     required: true
+  },
+  user_added: {
+    type: String,
+    required: true
+  },
+  like : {
+    type: Number
   }
 });
 

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h2>
+        Fill up the below form to register :
+      </h2>
+      <%if (errors) { %>
+        <ul class="errors">
+          <%for (var err in errors){%>
+            <li class="alert alert-danger"> <%=errors[err]%></li><br>
+          <%}%>
+        </ul>
+      <%}%>
+      <% if ( messages ) { %>
+        <%for (var msg in messages){%>
+          <div class="flash"><%= messages[msg] %></div>
+        <%}%>
+      <% } %>
+      <form action="/wregister" method="POST" enctype="url/encoded">
+        <div id="form-goup">
+          <label>Email:</label>
+          <input class="form-control" type="email" name="email">
+        </div>
+        <div id="form-goup">
+          <label>Password:</label>
+          <input class="form-control" type="password" name="password">
+        </div>
+        <div id="form-goup">
+          <label>Confirm password:</label>
+          <input class="form-control" type="password" name="password2">
+        </div>
+        <br>
+        <input class="btn btn-primary" type="submit" name="sumbit" value="submit">
+      </form>
+      <br>
+      <a href="/wlogin">Already have an account?</a>
+    </div>
+  </body>
+</html>

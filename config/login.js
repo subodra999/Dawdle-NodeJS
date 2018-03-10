@@ -11,7 +11,7 @@ module.exports.login = function (email, password, callback) {
 			var id = users[0].token;
 			var newpass = temp + password;
 			var hashed_password = crypto.createHash('sha512').update(newpass).digest("hex");
-			
+
 			if(hash_db == hashed_password){
 				callback({'response':"Login Sucess",'res':true});
 			}

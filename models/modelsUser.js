@@ -5,7 +5,9 @@ var userSchema = mongoose.Schema({
 	email: String,
 	hashed_password: String,
 	salt : String,
-	temp_str : String
+	temp_str : String,
+	liked_riddle : [String],
+	liked_story : [String]
 });
 
 module.exports = mongoose.model('users', userSchema);

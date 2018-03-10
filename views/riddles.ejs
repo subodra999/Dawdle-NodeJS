@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Riddles</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+    .collapsible {
+        background-color: #777;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+    }
+
+    .active, .collapsible:hover {
+        background-color: #555;
+    }
+
+    .collapsible:after {
+        content: '\002B';
+        color: white;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\2212";
+    }
+
+    .content {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        background-color: #f1f1f1;
+    }
+    </style>
+  </head>
+  <body>
+    <a href="/entry">Home</a>
+    <div class="container">
+      <h1>
+        Welcome to <%= title %> page !
+      </h1>
+      <div class="form-group">
+        <%for (var riddle in riddles){%>
+          <div class="form-control">
+            <div class="row">
+              <div class="col col-lg-10">
+                <p><%=riddles[riddle].body%></p><br>
+                <button class="collapsible">Show answer</button>
+                <div class="content"><p>Answer:<%=riddles[riddle].answer%></p></div>
+              </div>
+              <div class="col col-lg-2">
+                <%if(like === "true") {%>
+                  <form action="/myprofile/addLikeRiddles" method="POST" enctype="url/encoded">
+                    <input type="hidden" name="riddle_id" value="<%=riddles[riddle]._id%>">
+                    <input class="btn btn-primary" type="submit" name="sumbit" value="Like">
+                  </form>
+                <%}%>
+                <p>User liked: <%=riddles[riddle].like%></p>
+              </div>
+            </div>
+          </div>
+        <%}%>
+      </div>
+    </div>
+    <script type="text/javascript">
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dawdle</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <% if ( messages ) { %>
+      <%for (var msg in messages){%>
+        <div class="flash"><%= messages[msg] %></div>
+      <%}%>
+    <% } %>
+    <div class="container">
+
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="#" class="navbar-brand">Dawdle</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/myprofile">My Profile</a>
+              <a href="/wlogout">Logout</a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+      <h2>Have a look on : </h2>
+      <div class="list-group">
+        <a href="/wstories" class="list-group-item">Stories</a>
+        <a href="/wriddles" class="list-group-item">Riddles</a>
+      </div>
+    </div>
+  </body>
+</html>

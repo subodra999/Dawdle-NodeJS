@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <a href="/entry">Home</a>
+    <div class="container">
+      <p class="alert alert-success"><%=user[0].email%></p>
+      <div class="list-group">
+        <a href="/myprofile/addStory"class="list-group-item">Add a story</a>
+        <a href="/myprofile/addRiddle"class="list-group-item">Add a riddle</a>
+        <a href="/myprofile/myStory" class="list-group-item">Stories add by me</a>
+        <a href="/myprofile/myRiddle" class="list-group-item">Riddles added by me</a>
+        <a href="/myprofile/likedStory" class="list-group-item">Stories liked by me</a>
+        <a href="/myprofile/likedRiddle" class="list-group-item">Riddles liked by me</a>
+      </div>
+    </div>
+  </body>
+</html>

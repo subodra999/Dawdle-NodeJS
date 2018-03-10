@@ -13,6 +13,13 @@ var storySchema = mongoose.Schema({
   author: {
     type: String,
     required: true
+  },
+  user_added: {
+    type: String,
+    required: true
+  },
+  like: {
+    type: Number
   }
 });
 
