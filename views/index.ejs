@@ -21,8 +21,9 @@
             <h5 class="header col s12 light">Something about dawdle</h5>
           </div>
           <div class="row">
-            <div class="col s6 center"><a href="/wlogin" id="login-button" class="btn-large waves-effect waves-light teal lighten-1">Login</a></div>
-            <div class="col s6 center"><a href="/wregister" id="signup-button" class="btn-large waves-effect waves-light teal lighten-1">Sign-up</a></div>    
+            <div class="col s6 center"><a href="/wlogin" id="login-button" class="btn-large waves-effect waves-light teal lighten-1 modal-trigger"> <i class="material-icons">person</i> Login</a>
+            </div>
+            <div class="col s6 center"><a href="/wregister" id="signup-button" class="btn-large waves-effect waves-light teal lighten-1"> <i class="material-icons">person_add</i> Sign-up</a></div>    
           </div>
           <br><br>
         </div>
@@ -94,5 +95,14 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+      });
+      $(document).ready(function(){
+  $('.parallax').parallax();
+});
+    </script>
   </body>
 </html>

@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Dawdle</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--Import google icon font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="/css/style.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
     <% if ( messages ) { %>
@@ -12,28 +16,70 @@
         <div class="flash"><%= messages[msg] %></div>
       <%}%>
     <% } %>
-    <div class="container">
-
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a href="#" class="navbar-brand">Dawdle</a>
+    <div class="container-fluid">
+      <div class="navbar-fixed">
+        <nav class="mynavbar">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Dawdle</a>
+            <ul class="right hide-on-med-and-down navele">
+              <li><a href="/myprofile">Myprofile</a></li>
+              <li><a href="/wlogout">Log out</a></li>
+            </ul>
           </div>
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="/myprofile">My Profile</a>
-              <a href="/wlogout">Logout</a>
-            </li>
-          </ul>
-        </div>
-
-      </nav>
-
-      <h2>Have a look on : </h2>
-      <div class="list-group">
-        <a href="/wstories" class="list-group-item">Stories</a>
-        <a href="/wriddles" class="list-group-item">Riddles</a>
+        </nav>
       </div>
+
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg" height="300px">
+              <span class="card-title">Riddles</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/wriddles"><i class="material-icons">forward</i></a>
+            </div>
+            <div class="card-content">
+              <p>A riddle is a statement or question or phrase having a double or veiled meaning, put forth as a puzzle to be solved.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/stories.jpg" height="300px">
+              <span class="card-title">Stories</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/wstories"><i class="material-icons">forward</i></a>
+            </div>
+            <div class="card-content">
+              <p>A story is a report of connected events, real or imaginary, presented in a sequence of written or spoken words, or still or moving images, or both.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/qoutes.jpg" height="300px">
+              <span class="card-title">Quotes</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="#"><i class="material-icons">forward</i></a>
+            </div>
+            <div class="card-content">
+              <p>A quotation can also refer to the repeated use of units of any other form of expression, especially parts of artistic works: elements of a painting, scenes from a movie or sections from a musical composition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="page-footer teal">
+        <div class="footer-copyright">
+          <div class="container">
+            copyright &copy 2018 reserved
+          </div>
+        </div>
+      </footer>
     </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
   </body>
 </html>

@@ -23,7 +23,7 @@ p {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,0,255,.9);
+  color: rgba(255,255,255,.9);
 }
   .parallax-container .section {
     width: 100%;
@@ -55,3 +55,51 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+
+
+
+/* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+
+   .parallax{
+  		position:static;
+	}
+
+
+/*my style*/
+	.mynavbar{
+		background-color: #26a69a;
+		color: white;
+	}
+	.nav-wrapper{
+		padding-left: 5%;
+	}
+	.navele{
+		padding-right: 30px;
+	}

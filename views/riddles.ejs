@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Riddles</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--Import google icon font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="/css/style.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
     .collapsible {
         background-color: #777;
@@ -44,34 +48,50 @@
     </style>
   </head>
   <body>
-    <a href="/entry">Home</a>
-    <div class="container">
-      <h1>
-        Welcome to <%= title %> page !
-      </h1>
-      <div class="form-group">
+
+      <div class="container-fluid">
+        <div class="navbar-fixed">
+          <nav class="mynavbar">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo"><%= title %></a>
+              <ul class="right hide-on-med-and-down navele">
+                <li><a href="/entry">Home</a></li>
+                <li><a href="/myprofile">Myprofile</a></li>
+                <li><a href="/wlogout">Log out</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+
+      <br>
+
+
+      <div class="row">
         <%for (var riddle in riddles){%>
-          <div class="form-control">
-            <div class="row">
-              <div class="col col-lg-10">
-                <p><%=riddles[riddle].body%></p><br>
-                <button class="collapsible">Show answer</button>
-                <div class="content"><p>Answer:<%=riddles[riddle].answer%></p></div>
-              </div>
-              <div class="col col-lg-2">
-                <%if(like === "true") {%>
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content">
+              <p><%= riddles[riddle].body %></p>
+              <button class="collapsible">Show answer</button>
+              <div class="content"><p><%=riddles[riddle].answer%></p></div>
+              <%if(like === "true") {%>
                   <form action="/myprofile/addLikeRiddles" method="POST" enctype="url/encoded">
                     <input type="hidden" name="riddle_id" value="<%=riddles[riddle]._id%>">
-                    <input class="btn btn-primary" type="submit" name="sumbit" value="Like">
+                    <input class="btn" type="submit" name="sumbit" value="Like">
                   </form>
                 <%}%>
-                <p>User liked: <%=riddles[riddle].like%></p>
-              </div>
+                <p>Likes: <%=riddles[riddle].like%></p>
             </div>
           </div>
+        </div>
         <%}%>
       </div>
-    </div>
+      
+      
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
     <script type="text/javascript">
     var coll = document.getElementsByClassName("collapsible");
     var i;
