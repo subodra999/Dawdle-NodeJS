@@ -3,21 +3,156 @@
   <head>
     <meta charset="utf-8">
     <title><%=title%></title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!--Import google icon font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link rel="stylesheet" href="/css/style.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <a href="/entry">Home</a>
-    <div class="container">
-      <p class="alert alert-success"><%=user[0].email%></p>
-      <div class="list-group">
-        <a href="/myprofile/addStory"class="list-group-item">Add a story</a>
-        <a href="/myprofile/addRiddle"class="list-group-item">Add a riddle</a>
-        <a href="/myprofile/myStory" class="list-group-item">Stories add by me</a>
-        <a href="/myprofile/myRiddle" class="list-group-item">Riddles added by me</a>
-        <a href="/myprofile/likedStory" class="list-group-item">Stories liked by me</a>
-        <a href="/myprofile/likedRiddle" class="list-group-item">Riddles liked by me</a>
+
+    <div class="container-fuild">
+
+      <div class="navbar-fixed">
+        <nav class="mynavbar">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><%=user[0].email%></a>
+            <ul class="right hide-on-med-and-down navele">
+              <li><a href="/entry">Home</a></li>
+              <li><a href="/wlogout">Log out</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
+
+      <br>
+      <div class="row">
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Story</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/addStory"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <p>Add a Story</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Riddle</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/addRiddle"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <p>Add a Riddle</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Quotes</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/addQuote"><i class="material-icons">add</i></a>
+            </div>
+            <div class="card-content">
+              <p>Add a Quote</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Story</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/myStory"><i class="material-icons">forward</i></a>
+            </div>
+            <div class="card-content">
+              <p>My Stories</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Riddles</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/myRiddle"><i class="material-icons">forward</i></a>
+            </div>
+            <div class="card-content">
+              <p>My Riddles</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Quote</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/myQuote"><i class="material-icons">forward</i></a>
+            </div>
+            <div class="card-content">
+              <p>My Quotes</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Story</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/likedStory"><i class="material-icons">thumb_up</i></a>
+            </div>
+            <div class="card-content">
+              <p>Liked Stories</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Riddle</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/likedRiddle"><i class="material-icons">thumb_up</i></a>
+            </div>
+            <div class="card-content">
+              <p>Liked Riddles</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m2">
+          <div class="card">
+            <div class="card-image">
+              <img src="/images/riddles.jpg">
+              <span class="card-title">Quote</span>
+              <a class="btn-floating halfway-fab waves-effect waves-light red" href="/myprofile/LikedQuote"><i class="material-icons">thumb_up</i></a>
+            </div>
+            <div class="card-content">
+              <p>Liked Quotes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <footer class="page-footer teal">
+        <div class="footer-copyright">
+          <div class="container">
+            copyright &copy 2018 reserved
+          </div>
+        </div>
+      </footer>
     </div>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/js/materialize.min.js"></script>
   </body>
 </html>
